@@ -51,8 +51,4 @@ class Card extends Phaser.GameObjects.Sprite {
 
 	}
 
-	createRenderTexture(index, value, suit) {
-
-	}
-
 }

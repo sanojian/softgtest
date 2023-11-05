@@ -3,7 +3,7 @@ function initGame() {
 	
 	var config = {
 		type: Phaser.AUTO,
-		scene: [BootScene, MenuScene, Part1Scene, Part2Scene],
+		scene: [BootScene, MenuScene, Part1Scene, Part2Scene, Part3Scene],
 		scale: {
 			mode: Phaser.Scale.FIT,
 			autoCenter: Phaser.Scale.CENTER_BOTH,

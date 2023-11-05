@@ -2,7 +2,7 @@
  * play screen part 1
  */
 
-class Part1Scene extends Phaser.Scene {
+class Part1Scene extends BasePartScene {
 
 	constructor() {
 		super({
@@ -50,16 +50,7 @@ class Part1Scene extends Phaser.Scene {
 			dx += spacing;
 		}
 
-		// FPS counter
-		this.fpsText = this.add.text(10, 10, '0', DEFS.FPS_STYLE);
-
-		// return button
-		this.add.text(this.sys.game.canvas.width / 2, this.sys.game.canvas.height - 100, 'BACK TO MENU', DEFS.MENU_STYLE)
-			.setOrigin(0.5)
-			.setInteractive()
-			.on('pointerdown', () => {
-				this.scene.start('menu');;
-		});
+		super.create();
 
 		// start moving cards
 		this.time.delayedCall(1000, this.moveCard.bind(this));
@@ -117,7 +108,4 @@ class Part1Scene extends Phaser.Scene {
 		return array;
 	}
 
-	update() {
-		this.fpsText.setText('fps: ' + GLOBAL.phaserGame.loop.actualFps.toFixed(1));
-	}
 }

@@ -45,6 +45,7 @@ module.exports = function (grunt) {
 					'dist/js/game.js': [
 						'src/js/DEFS.js',
 						'src/js/main.js',
+						'src/js/scenes/BasePartScene.js',
 						'src/js/**/*.js',
 					]
 				}

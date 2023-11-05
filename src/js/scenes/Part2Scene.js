@@ -3,7 +3,7 @@
  * play screen part 2
  */
 
-class Part2Scene extends Phaser.Scene {
+class Part2Scene extends BasePartScene {
 
 	constructor() {
 		super({
@@ -28,16 +28,7 @@ class Part2Scene extends Phaser.Scene {
 			.setFill("#eee");
 
 
-		// FPS counter
-		this.fpsText = this.add.text(10, 10, '0', DEFS.FPS_STYLE);
-
-		// return button
-		this.add.text(this.sys.game.canvas.width / 2, this.sys.game.canvas.height - 100, 'BACK TO MENU', DEFS.MENU_STYLE)
-			.setOrigin(0.5)
-			.setInteractive()
-			.on('pointerdown', () => {
-				this.scene.start('menu');;
-		});
+		super.create();
 
 		this.changeText();
 	}
@@ -68,10 +59,6 @@ class Part2Scene extends Phaser.Scene {
 		// change text
 		this.time.delayedCall(2000, this.changeText.bind(this));
 
-	}
-
-	update() {
-		this.fpsText.setText('fps: ' + GLOBAL.phaserGame.loop.actualFps.toFixed(1));
 	}
 
 }
