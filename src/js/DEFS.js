@@ -6,6 +6,11 @@ const DEFS = {
 		font: "72px DINCondensed-Bold",
 		align: "center",
 		fill: "#9999ee"
+	},
+	FPS_STYLE: {
+		fontSize: "16px",
+		fill: "#00ff00",
+		align: "left"
 	}
 };
 

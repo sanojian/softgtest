@@ -27,15 +27,30 @@ class MenuScene extends Phaser.Scene {
 			.setFill("#eee");
 
 
+		// part 1
 		this.add.text(canvasW / 2, 400, 'PART 1: CARDS', DEFS.MENU_STYLE)
 			.setOrigin(0.5)
 			.setInteractive()
 			.on('pointerdown', () => {
-				this.scene.start('play');;
+				this.scene.start('part1');;
 			});
 
+		// part 2
+		this.add.text(canvasW / 2, 600, 'PART 2: TEXT', DEFS.MENU_STYLE)
+			.setOrigin(0.5)
+			.setInteractive()
+			.on('pointerdown', () => {
+				this.scene.start('part2');;
+			});
 
-		//this.scene.start('play');
+		// part 3
+		this.add.text(canvasW / 2, 800, 'PART 3: PARTICLES', DEFS.MENU_STYLE)
+			.setOrigin(0.5)
+			.setInteractive()
+			.on('pointerdown', () => {
+				this.scene.start('part3');;
+			});
+
 
 	}
 	
