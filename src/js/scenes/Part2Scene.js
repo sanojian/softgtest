@@ -18,6 +18,9 @@ class Part2Scene extends BasePartScene {
 	
 	create() {
 
+		this.charValues = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+		this.emojiValues = ['🍏','🍎','🍐','🍊','🍋','🍌','🍉','🍇','🍓','🫐','🍈','🍒','🍑','🥭','🍍','🥥','🥝','🍅','🍆','🥑','🥦','🥬','🥒','🌶','🫑','🌽','🥕','🫒','🧄','🧅','🥔','🍠','🥐','🥯','🍞','🥖','🥨','🧀','🥚','🍳','🧈','🥞','🧇','🥓','🥩','🍗','🍖','🦴','🌭v🍔','🍟','🍕'];
+
 		const style = {
 			font: "72px DINCondensed-Bold",
 			align: "center",
@@ -38,18 +41,15 @@ class Part2Scene extends BasePartScene {
 		const length = 3 + Math.floor(Math.random() * 4);
 		const fontSize = 24 + Math.floor(Math.random() * 96);
 
-		const charValues = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-		const emojiValues = ['🍏','🍎','🍐','🍊','🍋','🍌','🍉','🍇','🍓','🫐','🍈','🍒','🍑','🥭','🍍','🥥','🥝','🍅','🍆','🥑','🥦','🥬','🥒','🌶','🫑','🌽','🥕','🫒','🧄','🧅','🥔','🍠','🥐','🥯','🍞','🥖','🥨','🧀','🥚','🍳','🧈','🥞','🧇','🥓','🥩','🍗','🍖','🦴','🌭v🍔','🍟','🍕'];
-
 		let newText = "";
 		for (let i = 0; i < length; i++) {
 			if (Math.random() < 0.3) {
 				// use emoji
-				let newChar = emojiValues[Math.floor(Math.random() * emojiValues.length)];
+				let newChar = this.emojiValues[Math.floor(Math.random() * this.emojiValues.length)];
 				newText += newChar;
 			}
 			else {
-				let newChar = charValues.charAt(Math.floor(Math.random() * charValues.length));
+				let newChar = this.charValues.charAt(Math.floor(Math.random() * this.charValues.length));
 				newText += newChar;
 			}
 		}
