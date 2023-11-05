@@ -8,7 +8,7 @@ const DEFS = {
 		fill: "#9999ee"
 	},
 	FPS_STYLE: {
-		fontSize: "16px",
+		fontSize: "32px",
 		fill: "#00ff00",
 		align: "left"
 	}

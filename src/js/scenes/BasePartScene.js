@@ -12,7 +12,8 @@ class BasePartScene extends Phaser.Scene {
 	create() {
 
 		// FPS counter
-		this.fpsText = this.add.text(10, 10, '0', DEFS.FPS_STYLE);
+		this.fpsText = this.add.text(10, 10, '0', DEFS.FPS_STYLE)
+			.setOrigin(0);
 
 		// return button
 		this.add.text(this.sys.game.canvas.width / 2, this.sys.game.canvas.height - 100, 'BACK TO MENU', DEFS.MENU_STYLE)

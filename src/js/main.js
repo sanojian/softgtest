@@ -7,8 +7,8 @@ function initGame() {
 		scale: {
 			mode: Phaser.Scale.FIT,
 			autoCenter: Phaser.Scale.CENTER_BOTH,
-			width: 900,
-			height: 900
+			width: 768,
+			height: 1366
 		}		
 	};
 	
