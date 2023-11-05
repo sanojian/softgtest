@@ -22,7 +22,7 @@ class Card extends Phaser.GameObjects.Sprite {
 			.setOrigin(1)
 			.setFlipX(true)
 			.setFlipY(true);
-		style.font = "32px DINCondensed-Bold";
+		style.font = "64px DINCondensed-Bold";
 		const cardText3 = scene.add.text(70, 100, suit, style)
 			.setOrigin(0.5);
 		let renderTexture = scene.add.renderTexture(0, 0, 140, 200);
