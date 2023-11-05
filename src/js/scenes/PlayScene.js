@@ -25,9 +25,9 @@ class PlayScene extends Phaser.Scene {
 		// destination stack
 		this.cardStack2 = [];
 
-		const ox = 0;
+		const ox = 80;
 		const oy = 200;
-		const spacing = 4;
+		const spacing = 3;
 		let dx = 0;
 		let index = 0;
 
@@ -62,9 +62,24 @@ class PlayScene extends Phaser.Scene {
 			return;
 		}
 
-		const cardToMove = this.cardStack1.splice(this.cardStack1.length - 1, 1)[0];
+		const ox = 80;
+		const oy = 600;
+		const spacing = 3;
 
-		cardToMove.destroy();
+		const cardToMove = this.cardStack1.splice(this.cardStack1.length - 1, 1)[0];
+		cardToMove.setDepth(144 * 10 + 10 * this.cardStack2.length);
+		this.cardStack2.push(cardToMove);
+
+		this.tweens.add({
+			targets: cardToMove,
+			x: ox + this.cardStack2.length * spacing,
+			y: oy,
+			rotation: -Math.PI * 2, 
+			duration: 2000,
+			onComplete: () => {
+				cardToMove.setRotation(0);
+			}
+		});
 
 		this.time.delayedCall(1000, this.moveCard.bind(this));
 	}
