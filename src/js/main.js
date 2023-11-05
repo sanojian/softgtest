@@ -5,10 +5,10 @@ function initGame() {
 		type: Phaser.AUTO,
 		scene: [BootScene, MenuScene, Part1Scene, Part2Scene, Part3Scene],
 		scale: {
-			mode: Phaser.Scale.ENVELOP,
+			mode: Phaser.Scale.FIT,
 			autoCenter: Phaser.Scale.CENTER_BOTH,
-			width: 1366,
-			height: 768,
+			width: 900,
+			height: 900
 		}		
 	};
 	
