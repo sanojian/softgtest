@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>SoftGames Test</title>
+	<script type="text/javascript" src="./lib/phaser_3.60.0.min.js"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, minimum-scale=0.5, user-scalable=no, minimal-ui">
+	<style>
+		body, html { 
+			margin:0; 
+			padding: 0; 
+			overflow:hidden;
+			background-color: black;
+
+			/*display: flex;
+			justify-content: center;
+			align-items: center;*/
+		}
+		
+		canvas {
+			display: block;
+			margin: auto;
+		}
+		
+		@font-face {
+			font-family: DINCondensed-Bold;
+			src: url('fonts/FontsFree-Net-D-DINCondensed-Bold.ttf');
+			font-weight:400;
+			font-weight:normal;
+		}
+
+	</style>
+	
+	<script>
+		// for server compatibility
+		var module = {};
+	</script>
+	<script type="text/javascript" src="./js/game.js"></script>
+
+</head>
+<body onload="initGame()">
+
+<!-- to ready font for phaser -->
+<div style="font-family:DINCondensed-Bold; position:absolute; left:-1000px; visibility:hidden;">.</div>
+
+</body>
