@@ -17,8 +17,6 @@ class PlayScene extends Phaser.Scene {
 	
 	create() {
 
-		console.log('Game started');
-
 		// origin stack
 		this.cardStack1 = [];
 
@@ -53,6 +51,25 @@ class PlayScene extends Phaser.Scene {
 		}
 
 		this.time.delayedCall(1000, this.moveCard.bind(this));
+
+
+		let style = {
+			fontSize: "16px",
+			fill: "#00ff00",
+			align: "left"
+		};
+
+		this.fpsText = this.add.text(10, 10, '0', style)
+
+		// return button
+
+		this.add.text(this.sys.game.canvas.width / 2, this.sys.game.canvas.height - 100, 'BACK TO MENU', DEFS.MENU_STYLE)
+			.setOrigin(0.5)
+			.setInteractive()
+			.on('pointerdown', () => {
+				this.scene.start('menu');;
+			});
+		
 	}
 
 	moveCard() {
@@ -105,5 +122,8 @@ class PlayScene extends Phaser.Scene {
 
 		return array;
 	}
-	
+
+	update() {
+		this.fpsText.setText(GLOBAL.phaserGame.loop.actualFps.toFixed(1));
+	}
 }

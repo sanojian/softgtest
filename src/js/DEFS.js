@@ -1,4 +1,14 @@
 const DEFS = {
 
-	VERSION: '0.0.1'
+	VERSION: '0.0.1',
+
+	MENU_STYLE: {
+		font: "72px DINCondensed-Bold",
+		align: "center",
+		fill: "#9999ee"
+	}
+};
+
+const GLOBAL = {
+
 };

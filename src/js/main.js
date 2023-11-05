@@ -3,7 +3,7 @@ function initGame() {
 	
 	var config = {
 		type: Phaser.AUTO,
-		scene: [BootScene, PlayScene],
+		scene: [BootScene, MenuScene, PlayScene],
 		scale: {
 			mode: Phaser.Scale.FIT,
 			autoCenter: Phaser.Scale.CENTER_BOTH,
@@ -28,10 +28,7 @@ function initGame() {
 		
 	};
 	
-	// get game parameters from URL string
-	//Utils.readUrlParams();
-
-	var game = new Phaser.Game(config);
+	GLOBAL.phaserGame = new Phaser.Game(config);
 
 	console.log("Game initialized");
 }
