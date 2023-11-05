@@ -20,7 +20,7 @@ class BootScene extends Phaser.Scene {
 
 		console.log('SoftGames Test v ' + DEFS.VERSION);
 
-		this.scene.start('menu');
+		this.scene.start('part3');
 
 	}
 	
