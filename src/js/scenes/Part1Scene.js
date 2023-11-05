@@ -18,8 +18,8 @@ class Part1Scene extends BasePartScene {
 		// destination stack
 		this.cardStack2 = [];
 
-		const ox = 80;
-		const oy = 200;
+		const ox = this.sys.game.canvas.width / 2 - 144 * 3 / 2;
+		const oy = 180;
 		const spacing = 3;
 		let dx = 0;
 		let index = 0;
@@ -63,8 +63,8 @@ class Part1Scene extends BasePartScene {
 			return;
 		}
 
-		const ox = 80;
-		const oy = 600;
+		const ox = this.sys.game.canvas.width / 2 - 144 * 3 / 2;
+		const oy = 500;
 		const spacing = 3;
 
 		const cardToMove = this.cardStack1.splice(this.cardStack1.length - 1, 1)[0];

@@ -11,12 +11,23 @@ class BootScene extends Phaser.Scene {
 		});
 	}
 	
+	preload() {
+
+		this.load.image('playButton', 'gfx/playButton.png');
+	}
+
 	create() {
 
 		console.log('SoftGames Test v ' + DEFS.VERSION);
 
-		this.scene.start('menu');
+		this.add.image(this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, 'playButton')
+			.setInteractive()
+			.on('pointerdown', () => {
+				this.scale.toggleFullscreen();
+				this.scene.start('menu');
+			});
 
+		
 	}
 	
 }
