@@ -52,6 +52,4 @@ class Part3Scene extends BasePartScene {
 		super.create();
 	}
 	
-
-
 }

@@ -2,9 +2,17 @@
 
 class Card extends Phaser.GameObjects.Sprite {
 
+	/**
+	 * 
+	 * @param {Phaser.Scene} scene 
+	 * @param {Number} x 
+	 * @param {Number} y 
+	 * @param {Number} index position in the deck
+	 * @param {String} value number value of card
+	 * @param {String} suit suit emoji for card
+	 */
 	constructor(scene, x, y, index, value, suit) {
 	
-
 		const textureName = 'cardGraphic' + index;
 
 		if (!scene.textures.exists(textureName)) {

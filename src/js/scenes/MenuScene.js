@@ -56,13 +56,16 @@ class MenuScene extends Phaser.Scene {
 				this.scale.toggleFullscreen();
 			});
 
-		
+		// set menu button positions
 		this.layoutMenu();
 
 		this.scale.on('resize', this.layoutMenu, this);
 		
 	}
 
+	/**
+	 * respond to screen resizing
+	 */
 	layoutMenu() {
 
 		let canvasW = this.sys.game.canvas.width;
