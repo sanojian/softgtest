@@ -10,17 +10,12 @@ class BootScene extends Phaser.Scene {
 			key: 'boot'
 		});
 	}
-
-	preload() {
-
-
-	}
 	
 	create() {
 
 		console.log('SoftGames Test v ' + DEFS.VERSION);
 
-		this.scene.start('part3');
+		this.scene.start('menu');
 
 	}
 	

@@ -9,11 +9,6 @@ class Part1Scene extends BasePartScene {
 			key: 'part1'
 		});
 	}
-
-	preload() {
-
-
-	}
 	
 	create() {
 
@@ -33,16 +28,17 @@ class Part1Scene extends BasePartScene {
 		const values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
 
 		let deck = [];
-		// create deck
+		// create deck values
 		for (let s = 0; s < suits.length; s++) {
 			for (let v = 0; v < values.length; v++) {
 				deck.push({ suit: suits[s], value: values[v] });
 			}
 		}
 
-		// shuffle deck
+		// shuffle deck values
 		deck = this.shuffle(deck);
 
+		// create cards from shuffled deck
 		for (let i = 0; i < deck.length; i++) {
 
 			this.cardStack1.push(new Card(this, ox + dx, oy, index++, deck[i].value, deck[i].suit).setDepth(index * 10));
@@ -57,6 +53,9 @@ class Part1Scene extends BasePartScene {
 
 	}
 
+	/**
+	 * Move card from original deck into destination deck
+	 */
 	moveCard() {
 
 		if (this.cardStack1.length == 0) {
@@ -87,9 +86,11 @@ class Part1Scene extends BasePartScene {
 	}
 
 
-	/*
-		Fisher-Yates (aka Knuth) Shuffle
-	*/
+	/**
+	 * Fisher-Yates (aka Knuth) Shuffle 
+	 * @param {Array} array the array to shuffle
+	 * @returns {Array} the shuffled array
+	 */
 	shuffle(array) {
 		let currentIndex = array.length,  randomIndex;
 

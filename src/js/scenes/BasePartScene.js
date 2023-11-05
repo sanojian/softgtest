@@ -8,11 +8,6 @@ class BasePartScene extends Phaser.Scene {
 	constructor(keyObj) {
 		super(keyObj);
 	}
-
-	preload() {
-
-
-	}
 	
 	create() {
 
@@ -31,6 +26,7 @@ class BasePartScene extends Phaser.Scene {
 	
 
 	update() {
+		// update fps counter
 		this.fpsText.setText('fps: ' + GLOBAL.phaserGame.loop.actualFps.toFixed(1));
 	}
 

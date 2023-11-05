@@ -10,11 +10,6 @@ class Part2Scene extends BasePartScene {
 			key: 'part2'
 		});
 	}
-
-	preload() {
-
-
-	}
 	
 	create() {
 
@@ -26,7 +21,7 @@ class Part2Scene extends BasePartScene {
 			align: "center",
 			fill: "#9999ee"
 		};
-		this.theText = this.add.text(this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, 'THE TEXT', style)
+		this.theText = this.add.text(this.sys.game.canvas.width / 2, this.sys.game.canvas.height / 2, ' ', style)
 			.setOrigin(0.5)
 			.setFill("#eee");
 
@@ -36,11 +31,16 @@ class Part2Scene extends BasePartScene {
 		this.changeText();
 	}
 	
+	/**
+	 * Randomly change the displayed text
+	 */
 	changeText() {
 
+		// get a random length and font size
 		const length = 3 + Math.floor(Math.random() * 4);
 		const fontSize = 24 + Math.floor(Math.random() * 96);
 
+		// build our random string
 		let newText = "";
 		for (let i = 0; i < length; i++) {
 			if (Math.random() < 0.3) {
@@ -49,6 +49,7 @@ class Part2Scene extends BasePartScene {
 				newText += newChar;
 			}
 			else {
+				// use character
 				let newChar = this.charValues.charAt(Math.floor(Math.random() * this.charValues.length));
 				newText += newChar;
 			}
@@ -56,7 +57,7 @@ class Part2Scene extends BasePartScene {
 
 		this.theText.setText(newText).setFontSize(fontSize + 'px');
 
-		// change text
+		// change text after delay
 		this.time.delayedCall(2000, this.changeText.bind(this));
 
 	}
